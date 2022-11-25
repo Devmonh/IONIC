@@ -1,0 +1,64 @@
+<ion-header id="iniciologo">
+  <ion-toolbar color="primary" >
+    <div>
+      <a><ion-img src="../assets/imagen/logo1.png" class="logoMedio"></ion-img> </a> 
+    </div>
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content color="primary">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title> Iniciar sesión</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form>
+        <ion-item lines="full">
+            <ion-label position="floating" class="typoForm">Email</ion-label>
+            <ion-input type="email" #email required></ion-input>
+        </ion-item>
+
+        <ion-item lines="full">
+            <ion-label position="floating" class="typoForm">Contraseña</ion-label>
+            <ion-input type="password" #password required></ion-input>  
+        </ion-item>
+
+        <ion-row>
+            <ion-col class="containerIngresar">
+              <ion-button class="botonIngresar" type="submit" color="warning" 
+              (click)="ingresar(email,password)" expand="block">Ingresar
+              </ion-button>
+              
+              <ion-row>
+                <ion-col>
+                  <p class="ion-text-end">
+                    <a routerLink="/olvidar-contrasenia">¿Olvidaste la contraseña?</a>
+                  </p>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>    
+      </form>  
+    </ion-card-content>
+    
+   
+  </ion-card>
+  <!-- <span class="center-span"> o sino </span>-->
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" color="warning" class="botonGoogle" (click)="onLoginGoogle()"
+      expand="block" >Ingresar con Google
+
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="end">
+      <ion-button id="footerRegistro" [routerLink]="['/registro']"> Registrarse </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,7 @@
+{
+  "name": "LoginIo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Configuracion publicaciones</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <ion-icon color="" slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div style="text-align: end ;margin: 20px;">
+    <ion-button (click)="nueva()" color="dark">
+      Nueva Publicacion
+    </ion-button>
+  </div>
+  
+  <div *ngIf="enableNewPublicacion">
+    
+    <ion-item>
+
+      <ion-buttons slot="end">
+        <ion-button (click)="enableNewPublicacion=false">
+          <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    </ion-item>
+
+    <h3 class="subtitulo  encabezado">Ingrese datos de la publicacion</h3>
+    
+    
+    
+    <ion-item>
+      <ion-label class="normal" position="floating">
+        Nombre del servicio:
+      </ion-label>
+      <ion-input [(ngModel)]="newPublicacion.nombre"   type="string" inputmode="text">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label  class="normal" position="floating">
+        Descripcion:
+      </ion-label>
+      <ion-input [(ngModel)]="newPublicacion.descripcion"  type="string" inputmode="text">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="normal" position="floating">
+        Telefono de contacto:
+      </ion-label>
+      <ion-input [(ngModel)]="newPublicacion.telContacto"  type="number" inputmode="numeric">  
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="normal" position="floating">
+        Barrio:
+      </ion-label>
+      <ion-input [(ngModel)]="newPublicacion.ubicacion"  type="string" inputmode="text">  
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="normal" >
+        Foto:
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+          <label for="file-upload">
+            <ion-icon slot="icon-only" name="images"></ion-icon>
+          </label>
+          
+          <input (change)="newImageUpload($event)" id="file-upload" style="display: none" type="file" accept="image/*">
+
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+
+    <ion-item> 
+      <img class="image" [src]="newPublicacion.foto">
+    </ion-item>
+    <ion-button style="margin:35px ;" expand="full" color="dark" (click)="guardarPublicacion() ">
+      Guardar
+    </ion-button>
+  </div>
+ 
+
+<ion-card>
+    <!-- <h3 class="subtitulo  encabezado">Mis publicaciones</h3> -->
+    <ion-item *ngFor="let publicacion of publicaciones">
+      <ion-label>
+        {{publicacion.nombre}}
+      </ion-label>
+
+      <ion-buttons slot="end">
+        <ion-button (click)="newPublicacion=publicacion; enableNewPublicacion=true;">
+          <ion-icon slot="icon-only" color="success" name="create-outline"></ion-icon>
+        </ion-button>
+        
+      <ion-button (click)="delatePublicacion(publicacion)">
+        <ion-icon slot="icon-only" color="danger" name="trash"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+</ion-card>
+
+ 
+ 
+ 
+</ion-content>

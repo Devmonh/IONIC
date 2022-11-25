@@ -1,0 +1,26 @@
+
+    <ion-header>
+      <ion-toolbar color="primary">
+       
+        <br><ion-title>Home</ion-title><br>
+        <ion-buttons slot="start">
+          <ion-button (click)="openMenu()">
+             <ion-icon color="" slot="icon-only"  name="menu-sharp"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      
+      <ion-item *ngFor="let publicacion of publicaciones">
+        
+        <app-servicio [publicacion]=publicacion></app-servicio>
+
+        
+      
+      </ion-item>
+    </ion-content>
+    
+<ion-card>
+  <ion-img></ion-img>
+</ion-card>

@@ -1,0 +1,68 @@
+.logoMedio {
+	width: 110px;
+	height: auto;
+	margin: auto;
+	padding-top: 15px;
+}
+
+.header-ios ion-toolbar:last-of-type {
+	--border-width: 0;
+}
+
+.footer-ios ion-toolbar:first-of-type {
+	--border-width: 0;
+}
+
+ion-card-title {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+ion-item {
+	--padding-start: 0;
+}
+
+ion-label {
+	margin: 0;
+}
+
+.native-input {
+	padding: 0;
+}
+
+.botonGoogle {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.botonIngresar {
+	margin-top: 10px;
+}
+
+.ion-text-end {
+	text-align: center !important;
+	padding-top: 10px;
+}
+
+ion-card {
+	margin-bottom: 5px;
+}
+
+.containerIngresar {
+	padding-bottom: 0;
+	padding-inline-start: 0;
+	padding-inline-end: 0;
+	margin-inline: 0 !important;
+}
+
+.containerIngresar ion-button {
+	margin-inline: 0 !important;
+}
+
+.typoForm{
+	color: rgb(181, 181, 181);
+}
+
+#footerRegistro {
+	padding-right: 6px;
+}

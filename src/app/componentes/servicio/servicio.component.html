@@ -1,0 +1,39 @@
+<ion-card >
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label class="nombre">{{publicacion.nombre}}</ion-label>
+        </ion-item>
+        <ion-img class="img-publicacion" [src]="publicacion.foto"></ion-img>
+        <ion-item (click)="vermapa(publicacion.ubicacion)" >
+          <ion-label class="barrio">{{publicacion.ubicacion}}</ion-label>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-item class="normal m-3">
+          {{publicacion.descripcion}} 
+        </ion-item>
+       
+        <ion-item>
+          <ion-buttons slot="end" >
+
+            <ion-button class="icon-whapp"(click)="contactar(publicacion.telContacto)">
+              <ion-icon name="logo-whatsapp"></ion-icon>
+            </ion-button>
+            
+            <ion-button slot= "start" class="icon-telefono" href="tel:{{contactarTel(publicacion.telContacto)}}">
+              <ion-icon name="call"> </ion-icon>
+            </ion-button>
+          </ion-buttons>
+          
+        </ion-item>
+     </ion-col>
+     
+    </ion-row>
+   
+  </ion-grid>
+ 
+  
+</ion-card>
